@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineer Portfolio | Backend & Fullstack Developer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'Fira Code', monospace; }
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .light .glass {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 dark:bg-slate-950 dark:text-slate-100 light:bg-slate-50 light:text-slate-900 transition-colors duration-300">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 glass border-b border-slate-800 dark:border-slate-800 light:border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#" class="text-xl font-bold font-mono text-sky-400">
+                &lt;<span class="text-slate-100 dark:text-slate-100 light:text-slate-900">FullStack Developer</span> /&gt;
+            </a>
+
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-sm">
+                <a href="#about" class="hover:text-sky-400 transition-colors">Giới thiệu</a>
+                <a href="#skills" class="hover:text-sky-400 transition-colors">Kỹ năng</a>
+                <a href="#projects" class="hover:text-sky-400 transition-colors">Dự án</a>
+                <a href="#contact" class="hover:text-sky-400 transition-colors">Liên hệ</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+               
+                <a href="#contact" class="hidden sm:inline-block bg-sky-500 hover:bg-sky-600 text-white font-semibold px-4 py-2 rounded-lg transition-colors text-sm">
+                    Tuyển dụng tôi
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="about" class="pt-32 pb-20 md:pt-40 md:pb-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-mono bg-sky-500/10 text-sky-400 border border-sky-500/20">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>Sẵn sàng cho các cơ hội mới</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight">
+                    Xin chào, tôi là <br/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-400">Software Engineer</span>
+                </h1>
+
+                <p class="text-lg text-slate-400 max-w-2xl leading-relaxed">
+                    Chuyên môn về phát triển hệ thống <strong>Backend</strong> mạnh mẽ (Node.js, Express.js, RESTful API), xây dựng giao diện <strong>Frontend</strong> hiện đại (React.js, Next.js, TypeScript) và tích hợp các công nghệ <strong>AI &amp; Realtime</strong>.
+                </p>
+
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="https://github.com/NguyenChiThanhCoder1802/" target="_blank" class="flex items-center space-x-2 bg-slate-800 hover:bg-slate-700 text-white px-5 py-3 rounded-lg font-medium transition-colors border border-slate-700">
+                        <i class="fa-brands fa-github text-lg"></i>
+                        <span>GitHub Profile</span>
+                    </a>
+                    <button onclick="copyEmail()" class="flex items-center space-x-2 bg-sky-500/10 hover:bg-sky-500/20 text-sky-400 border border-sky-500/30 px-5 py-3 rounded-lg font-medium transition-colors">
+                        <i class="fa-solid fa-copy"></i>
+                        <span id="copyText">Sao chép Email</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 flex flex-col gap-8">
+                <div class="rounded-[2rem] overflow-hidden border border-slate-800 bg-slate-900/80 shadow-2xl p-6 flex flex-col items-center text-center">
+                    <div class="relative w-64 h-64 rounded-full overflow-hidden border-4 border-sky-400 bg-slate-950 shadow-inner">
+                        <img src="images/avatar.JPG" alt="Avatar" class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <div class="mt-6 space-y-3">
+                        <p class="text-slate-300 font-semibold">Software Engineer</p>
+                        <p class="text-slate-400 text-sm leading-relaxed max-w-sm mx-auto">
+                            Đam mê thiết kế sản phẩm web hiệu năng cao, tối ưu backend và trải nghiệm người dùng mượt mà.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="rounded-xl overflow-hidden border border-slate-800 bg-slate-900 shadow-2xl font-mono text-sm">
+                    <div class="bg-slate-800/80 px-4 py-3 flex items-center justify-between border-b border-slate-700/50">
+                        <div class="flex space-x-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                        </div>
+                        <span class="text-xs text-slate-400">developer.json</span>
+                    </div>
+                    <div class="p-5 text-slate-300 space-y-2">
+                        <div><span class="text-purple-400">const</span> <span class="text-sky-300">developer</span> = {</div>
+                        <div class="pl-4"><span class="text-amber-300">role</span>: <span class="text-emerald-400">"Software Engineer"</span>,</div>
+                        <div class="pl-4"><span class="text-amber-300">primaryFocus</span>: <span class="text-emerald-400">"Backend & Restful API"</span>,</div>
+                        <div class="pl-4"><span class="text-amber-300">languages</span>: [<span class="text-emerald-400">"JavaScript"</span>, <span class="text-emerald-400">"TypeScript"</span>, <span class="text-emerald-400">"C#"</span>],</div>
+                        <div class="pl-4"><span class="text-amber-300">aiTools</span>: [<span class="text-emerald-400">"ChatGPT"</span>, <span class="text-emerald-400">"GitHub Copilot"</span>, <span class="text-emerald-400">"Claude"</span>],</div>
+                        <div class="pl-4"><span class="text-amber-300">softSkills</span>: [<span class="text-emerald-400">"Teamwork"</span>, <span class="text-emerald-400">"Problem Solving"</span>],</div>
+                        <div class="pl-4"><span class="text-amber-300">fastLearner</span>: <span class="text-purple-400">true</span></div>
+                        <div>};</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-slate-900/50 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-sky-400 mb-2 font-mono">&lt;Skills & Technologies /&gt;</h2>
+                <p class="text-slate-400">Tập hợp các công nghệ, ngôn ngữ lập trình và kỹ năng bổ trợ chuyên môn</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Backend -->
+                <div class="glass p-6 rounded-xl space-y-4">
+                    <div class="flex items-center space-x-3 text-sky-400">
+                        <i class="fa-solid fa-server text-2xl"></i>
+                        <h3 class="text-xl font-bold">Backend Development</h3>
+                    </div>
+                    <ul class="space-y-2 text-slate-300 text-sm">
+                        <li class="flex items-center justify-between bg-slate-800/50 p-2.5 rounded-lg border border-slate-800">
+                            <span>Node.js / Express.js</span>
+                            <span class="text-xs bg-sky-500/10 text-sky-400 px-2 py-0.5 rounded">Core</span>
+                        </li>
+                        <li class="flex items-center justify-between bg-slate-800/50 p-2.5 rounded-lg border border-slate-800">
+                            <span>RESTful API Design</span>
+                            <span class="text-xs bg-sky-500/10 text-sky-400 px-2 py-0.5 rounded">Architecture</span>
+                        </li>
+                        <li class="flex items-center justify-between bg-slate-800/50 p-2.5 rounded-lg border border-slate-800">
+                            <span>JWT Authentication</span>
+                            <span class="text-xs bg-sky-500/10 text-sky-400 px-2 py-0.5 rounded">Security</span>
+                        </li>
+                        <li class="flex items-center justify-between bg-slate-800/50 p-2.5 rounded-lg border border-slate-800">
+                            <span>Socket.IO</span>
+                            <span class="text-xs bg-sky-500/10 text-sky-400 px-2 py-0.5 rounded">Realtime</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Frontend -->
+                <div class="glass p-6 rounded-xl space-y-4">
+                    <div class="flex items-center space-x-3 text-emerald-400">
+                        <i class="fa-solid fa-laptop-code text-2xl"></i>
+                        <h3 class="text-xl font-bold">Frontend Development</h3>
+                    </div>
+                    <ul class="space-y-2 text-slate-300 text-sm">
+                        <li class="flex items-center justify-between bg-slate-800/50 p-2.5 rounded-lg border border-slate-800">
+                            <span>React.js / Next.js</span>
+                            <span class="text-xs bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded">Framework</span>
+                        </li>
+                        <li class="flex items-center justify-between bg-slate-800/50 p-2.5 rounded-lg border border-slate-800">
+                            <span>Tailwind CSS / Material UI</span>
+                            <span class="text-xs bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded">UI/UX</span>
+                        </li>
+                        <li class="flex items-center justify-between bg-slate-800/50 p-2.5 rounded-lg border border-slate-800">
+                            <span>HTML5 / CSS3</span>
+                            <span class="text-xs bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded">Standard</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Languages & Databases -->
+                <div class="glass p-6 rounded-xl space-y-4">
+                    <div class="flex items-center space-x-3 text-purple-400">
+                        <i class="fa-solid fa-database text-2xl"></i>
+                        <h3 class="text-xl font-bold">Languages & Databases</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="text-xs text-slate-400 mb-1">Ngôn ngữ lập trình</div>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="bg-purple-500/10 text-purple-300 px-2.5 py-1 rounded text-xs border border-purple-500/20">JavaScript (ES6+)</span>
+                                <span class="bg-purple-500/10 text-purple-300 px-2.5 py-1 rounded text-xs border border-purple-500/20">TypeScript</span>
+                                <span class="bg-purple-500/10 text-purple-300 px-2.5 py-1 rounded text-xs border border-purple-500/20">C# / C</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-400 mb-1">Cơ sở dữ liệu</div>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="bg-purple-500/10 text-purple-300 px-2.5 py-1 rounded text-xs border border-purple-500/20">MongoDB</span>
+                                <span class="bg-purple-500/10 text-purple-300 px-2.5 py-1 rounded text-xs border border-purple-500/20">SQL Server</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Productivity -->
+                <div class="glass p-6 rounded-xl space-y-4">
+                    <div class="flex items-center space-x-3 text-amber-400">
+                        <i class="fa-solid fa-brain text-2xl"></i>
+                        <h3 class="text-xl font-bold">AI Productivity Tools</h3>
+                    </div>
+                    <p class="text-xs text-slate-400">Sử dụng công cụ AI nâng cao hiệu suất lập trình</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-amber-500/10 text-amber-300 px-3 py-1.5 rounded-lg text-xs border border-amber-500/20 flex items-center gap-2">
+                            <i class="fa-solid fa-robot"></i> ChatGPT
+                        </span>
+                        <span class="bg-amber-500/10 text-amber-300 px-3 py-1.5 rounded-lg text-xs border border-amber-500/20 flex items-center gap-2">
+                            <i class="fa-solid fa-code-branch"></i> GitHub Copilot
+                        </span>
+                        <span class="bg-amber-500/10 text-amber-300 px-3 py-1.5 rounded-lg text-xs border border-amber-500/20 flex items-center gap-2">
+                            <i class="fa-solid fa-sparkles"></i> Claude AI
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="glass p-6 rounded-xl space-y-4 md:col-span-2 lg:col-span-2">
+                    <div class="flex items-center space-x-3 text-indigo-400">
+                        <i class="fa-solid fa-users text-2xl"></i>
+                        <h3 class="text-xl font-bold">Kỹ năng mềm & Tương tác</h3>
+                    </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+                        <div class="bg-slate-800/40 p-3 rounded-lg border border-slate-800">
+                            <i class="fa-solid fa-rocket text-indigo-400 mb-1"></i>
+                            <div class="text-xs font-medium text-slate-200">Tiếp thu nhanh công nghệ mới</div>
+                        </div>
+                        <div class="bg-slate-800/40 p-3 rounded-lg border border-slate-800">
+                            <i class="fa-solid fa-people-group text-indigo-400 mb-1"></i>
+                            <div class="text-xs font-medium text-slate-200">Làm việc nhóm</div>
+                        </div>
+                        <div class="bg-slate-800/40 p-3 rounded-lg border border-slate-800">
+                            <i class="fa-solid fa-comments text-indigo-400 mb-1"></i>
+                            <div class="text-xs font-medium text-slate-200">Đàm phán & Giải quyết vấn đề</div>
+                        </div>
+                        <div class="bg-slate-800/40 p-3 rounded-lg border border-slate-800">
+                            <i class="fa-solid fa-display text-indigo-400 mb-1"></i>
+                            <div class="text-xs font-medium text-slate-200">Thuyết trình trước đám đông</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl font-bold text-sky-400 mb-2 font-mono">&lt;Featured Projects /&gt;</h2>
+            <p class="text-slate-400">Các dự án cá nhân thực tế thể hiện năng lực phát triển phần mềm</p>
+        </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Project 1: Hair Salon Management -->
+                <div class="glass rounded-xl overflow-hidden border border-slate-800 flex flex-col justify-between hover:border-sky-500/50 transition-all">
+        <div class="p-6 space-y-4">
+            <div class="flex items-center justify-between">
+                <span class="text-xs font-mono bg-sky-500/10 text-sky-400 px-3 py-1 rounded-full border border-sky-500/20">Fullstack & AI Integration</span>
+                <div class="flex items-center space-x-3 text-slate-400">
+                  
+                    <a href="https://www.tiktok.com/@ct_anh/video/7619639988568722709" target="_blank" class="hover:text-pink-500 transition-colors flex items-center gap-1" title="Xem video Demo trên TikTok">
+                        <i class="fa-brands fa-tiktok text-xl"></i>
+                    </a>
+                    <!-- GitHub Link -->
+                    <a href="https://github.com/NguyenChiThanhCoder1802/TiemTocFE" target="_blank" class="hover:text-sky-400 transition-colors" title="GitHub Repository">
+                        <i class="fa-brands fa-github text-xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-bold text-slate-100">Hệ thống Quản lý Salon Tóc</h3>
+            
+            <!-- BỔ SUNG: Khung chỉ số tương tác TikTok ấn tượng -->
+            <a href="https://www.tiktok.com/" target="_blank" class="block bg-slate-900/90 border border-slate-800 hover:border-pink-500/40 p-2.5 rounded-lg transition-all group">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-2 text-xs font-semibold text-slate-300">
+                        <i class="fa-brands fa-tiktok text-pink-500 text-sm group-hover:scale-110 transition-transform"></i>
+                        <span>Demo trên TikTok</span>
+                    </div>
+                    <span class="text-[10px] text-slate-500 font-mono group-hover:text-pink-400 transition-colors">Xem ngay <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+                <div class="grid grid-cols-3 gap-2 mt-2 pt-2 border-t border-slate-800/60 text-center text-xs">
+                    <div>
+                        <div class="font-bold text-pink-400">700+</div>
+                        <div class="text-[10px] text-slate-400">Lượt tim</div>
+                    </div>
+                    <div>
+                        <div class="font-bold text-sky-400">62</div>
+                        <div class="text-[10px] text-slate-400">Bình luận</div>
+                    </div>
+                    <div>
+                        <div class="font-bold text-emerald-400">180+</div>
+                        <div class="text-[10px] text-slate-400">Yêu thích</div>
+                    </div>
+                </div>
+            </a>
+
+            <p class="text-slate-400 text-sm leading-relaxed">
+                Hệ thống hỗ trợ khách hàng đặt lịch trực tuyến, quản lý danh mục dịch vụ, sản phẩm, tích hợp thanh toán tự động và trợ lý tư vấn thông minh bằng AI.
+            </p>
+
+            <div>
+                <div class="text-xs font-semibold text-slate-300 mb-2">Trách nhiệm chính:</div>
+                <ul class="text-xs text-slate-400 space-y-1.5 list-disc list-inside">
+                    <li>Thiết kế & phát triển RESTful API bằng <strong>Node.js, Express.js</strong>.</li>
+                    <li>Xây dựng hệ thống <strong>JWT Authentication</strong> phân quyền Admin/Customer.</li>
+                    <li>Tích hợp thanh toán <strong>VNPay Sandbox</strong> & Quản lý ảnh qua <strong>Cloudinary</strong>.</li>
+                    <li>Tích hợp <strong>Google Gemini API</strong> hỗ trợ AI tư vấn khách hàng.</li>
+                    <li>Phát triển Admin UI bằng <strong>React, TypeScript & Material UI</strong>.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="p-6 bg-slate-900/40 border-t border-slate-800/80">
+            <div class="flex flex-wrap gap-1.5">
+                <span class="bg-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded">Node.js</span>
+                <span class="bg-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded">Express.js</span>
+                <span class="bg-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded">React</span>
+                <span class="bg-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded">TypeScript</span>
+                <span class="bg-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded">MongoDB</span>
+                <span class="bg-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded">VNPay</span>
+                <span class="bg-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded">Gemini API</span>
+            </div>
+        </div>
+    </div>
+
+            <!-- Project 2: CommunityPlatform -->
+            <div class="glass rounded-xl overflow-hidden border border-slate-800 flex flex-col justify-between hover:border-emerald-500/50 transition-all">
+                <div class="p-6 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-mono bg-emerald-500/10 text-emerald-400 px-3 py-1 rounded-full border border-emerald-500/20">Social & Realtime</span>
+                        <div class="flex space-x-3 text-slate-400">
+                            <a href="https://github.com/NguyenChiThanhCoder1802/CommunityPlatformFE" target="_blank" class="hover:text-emerald-400 transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
+                        </div>
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-slate-100">CommunityPlatform</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Nền tảng mạng xã hội trực tuyến cho phép quản lý hồ sơ cá nhân, kết bạn, đăng bài viết và tương tác/trò chuyện thời gian thực.
+                    </p>
+
+                    <div>
+                        <div class="text-xs font-semibold text-slate-300 mb-2">Trách nhiệm chính:</div>
+                        <ul class="text-xs text-slate-400 space-y-1.5 list-disc list-inside">
+                            <li>Xây dựng hơn **30 RESTful APIs** (Auth, Profile, Posts, Friends).</li>
+                            <li>Hệ thống nhắn tin trò chuyện Realtime với **Socket.IO**.</li>
+                            <li>Xây dựng **JWT Auth & Authorization**, Validate dữ liệu với **Joi**.</li>
+                            <li>Quản lý hình ảnh bài viết và avatar bằng **Cloudinary**.</li>
+                            <li>Giao diện hiện đại phát triển bằng **Next.js & Tailwind CSS**.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-slate-900/40 border-t border-slate-800/80">
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="bg-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded">Next.js</span>
+                        <span class="bg-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded">Node.js</span>
+                        <span class="bg-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded">Express.js</span>
+                        <span class="bg-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded">Socket.IO</span>
+                        <span class="bg-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded">MongoDB</span>
+                        <span class="bg-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded">Tailwind CSS</span>
+                        <span class="bg-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded">Joi</span>
+                    </div>
+                </div>
+                <video autoplay loop muted playsinline class="w-full h-48 object-cover rounded-lg border border-slate-800">
+                    <source src="/images/copy_4B24615B-34F5-489E-B968-A113F6FD5D58.mov" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
+
+ <!-- Contact Section -->
+<section id="contact" class="py-20 bg-slate-900/50 border-t border-slate-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div class="text-center max-w-2xl mx-auto space-y-4">
+            <h2 class="text-3xl font-bold text-sky-400 font-mono">&lt;Get In Touch /&gt;</h2>
+            <p class="text-slate-300 text-base leading-relaxed">
+                Tôi đang tích cực tìm kiếm cơ hội làm việc ở vị trí <span class="text-sky-400 font-semibold">Backend Developer / IT Intern / Fresher</span>. Sẵn sàng học hỏi công nghệ mới và cống hiến hết mình cho các dự án thực tế của công ty.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div class=" lg:col-span-5 space-y-4">
+                <div class="glass p-5 rounded-xl border border-slate-800 hover:border-sky-500/30 transition-all">
+                    <div class="text-xs text-slate-400 font-mono mb-1">// Email chính thức</div>
+                    <a href="mailto:your-email@gmail.com" class="text-slate-100 font-medium hover:text-sky-400 flex items-center gap-3 transition-colors">
+                        <div class="w-10 h-10 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <span class="truncate">ngchithanh777@gmail.com</span>
+                    </a>
+                </div>
+
+                <div class="glass p-5 rounded-xl border border-slate-800 hover:border-sky-500/30 transition-all">
+                    <div class="text-xs text-slate-400 font-mono mb-1">// Số điện thoại / Zalo</div>
+                    <a href="tel:0123456789" class="text-slate-100 font-medium hover:text-sky-400 flex items-center gap-3 transition-colors">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <span>0375506732</span>
+                    </a>
+                </div>
+
+                <div class="glass p-5 rounded-xl border border-slate-800 hover:border-sky-500/30 transition-all">
+                    <div class="text-xs text-slate-400 font-mono mb-1">// Mạng xã hội & Code</div>
+                    <div class="flex items-center gap-3 pt-1">
+                        <a href="https://github.com/NguyenChiThanhCoder1802" target="_blank" class="w-10 h-10 rounded-lg bg-slate-800 text-slate-200 hover:bg-sky-500 hover:text-white flex items-center justify-center transition-all" title="GitHub">
+                            <i class="fa-brands fa-github text-lg"></i>
+                        </a>
+                       
+                    </div>
+                </div>
+            </div>
+
+           
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-slate-800 text-center text-xs text-slate-500">
+        <p>© 2026 Designed & Built with HTML, Tailwind CSS & JavaScript.</p>
+    </footer>
+
+    <!-- JavaScript Functions -->
+     <!-- Đặt đoạn Script này vào phía dưới cùng trước thẻ </body> -->
+        <script>
+            function handleFormSubmit(e) {
+                e.preventDefault();
+                alert("Cảm ơn bạn đã liên hệ! Tôi sẽ phản hồi lại ngay trong thời gian sớm nhất.");
+                e.target.reset();
+            }
+        </script>
+    <script>
+        // Copy Email Function
+        function copyEmail() {
+            const email = "ngchithanh777@gmail.com";
+            navigator.clipboard.writeText(email);
+            const copyText = document.getElementById("copyText");
+            copyText.innerText = "Đã sao chép!";
+            setTimeout(() => {
+                copyText.innerText = "Sao chép Email";
+            }, 2000);
+        }
+
+        // Dark/Light Theme Toggle Functionality
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (htmlElement.classList.contains('dark')) {
+                htmlElement.classList.remove('dark');
+                htmlElement.classList.add('light');
+            } else {
+                htmlElement.classList.remove('light');
+                htmlElement.classList.add('dark');
+            }
+        });
+    </script>
+</body>
+</html>
